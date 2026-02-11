@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réservation exclusive — Simulation Teams (Contrôleur + Démo + ETA)</title>
+  style.css
+</head>
+<body>
+  <header class="tms-header">
+    <div class="brand">
+      <div class="logo">🟣</div>
+      <div class="title">
+        <div class="app">Réservations (Simulation)</div>
+        <div class="res">Processus_deces_retraites.accdb</div>
+      </div>
+    </div>
+    <div class="user-box">
+      <label>Votre nom:</label>
+      <input="displayName" placeholder="Ex. Catherine" />
+      <button class="tms-btn ghost" id="saveName">Enregistrer</button>
+      <div class="divider"></div>
+      <button class="tms-btn admin-toggle" id="toggleAdmin">Activer mode contrôleur</button>
+      <button class="tms-btn demo-toggle" id="toggleDemo" title="Démo rapide">Activer démo rapide</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="status-card">
+      <div class="row">
+        <div class="status-pill" id="statusPill">Statut : ...</div>
+        <div class="timer" id="countdown"></div>
+      </div>
+      <div class="who" id="who"></div>
+      <div class="actions">
+        <button class="tms-btn primary" id="reserveBtn">Réserver maintenant</button>
+        <button class="tms-btn danger" id="releaseBtn" style="display:none">Libérer la ressource</button>
+        <button class="tms-btn" id="leaveQueueBtn" style="display:none">Quitter la file</button>
+        <button class="tms-btn ghost" id="refreshBtn">Rafraîchir</button>
+      </div>
+      <div class="hint" id="hint"></div>
+    </section>
+
+    <section class="queue-card">
+      <h3>File d'attente</h3>
+      <ol id="queueList" class="queue-list"></ol>
+      <div class="eta-legend">ETA = heure/durée estimée avant prise de main</div>
+    </section>
+
+    <section class="admin-card" id="adminPanel" style="display:none">
+      <h3>Mode contrôleur</h3>
+      <div class="admin-actions">
+        <button class="tms-btn danger" id="adminForceRelease">Forcer libération</button>
+        <button class="tms-btn" id="adminNext">Attribuer au suivant</button>
+        <button class="tms-btn" id="adminMinus1">-1 min</button>
+        <button class="tms-btn" id="adminPlus5">+5 min</button>
+        <button class="tms-btn ghost" id="adminClearQueue">Vider la file</button>
+        <button class="tms-btn ghost" id="adminReset">Réinitialiser tout</button>
+      </div>
+      <p class="admin-hint">Cliquez sur un nom pour retirer ou promouvoir.</p>
+    </section>
+  </main>
+
+  <footer class="footer">Simulation hors-ligne • Sessions : 2h (ou 2 min démo) • File d'attente • Admin • ETA • Sync multi-onglets</footer>
+
+  logic.js</script>
+</body>
+</html>
